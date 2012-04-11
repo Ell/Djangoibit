@@ -11,6 +11,8 @@ class Show(models.Model):
     date = models.DateField()
     slug = models.SlugField(editable=False)
     year = models.PositiveIntegerField(editable=False, blank=True)
+    songfile_size = models.PositiveIntegerField("Size in MB of songfile")
+    songfile_length = models.PositiveIntegerField("Length in seconds of set")
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
