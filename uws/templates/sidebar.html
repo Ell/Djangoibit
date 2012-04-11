@@ -1,0 +1,58 @@
+<div id="sidebar">
+
+    <div id="info">
+        <p><a href="/">ultrawizardsword</a></p>
+    </div>
+
+    <ul id="links">
+        <li><a href="/latest/feed/">archives rss</a></li>
+        <li><a href="itms://itunes.apple.com/us/podcast/ultrawizardsword-dot-net-archives/id429561509#" title="subscribe">subscribe w/itunes</a></li>
+        <li><a href="http://www.facebook.com/ultrawizardsword" title="bookface">visit us on bookface</a></li>
+    </ul>
+
+    <p><g:plusone size="small"></g:plusone></p>
+
+    {% regroup groupings|dictsort:"position" by title as group_list %}
+    <ul id="groups">
+    <li></li>
+    {% for group in group_list %}
+        <li>{{ group.grouper }}
+            <ul id="page">
+                {% for item in group.list %}
+                    {% for page in item.page_set.all %}
+                    <li><a href="/p/{{ page.slug }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {% regroup shows by year as show_list %}
+    <ul id="shows">
+    <li></li>
+    {% for show in show_list %}
+        <li>{{ show.grouper }}
+            <ul id="show">
+                {% for item in show.list %}
+                <li><a href="/s/{{ item.slug }}">{{ item.date|date:"m.d.Y" }} - {{ item.dj|lower }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <div id="logo">
+        <img src="http://relativeq.youngrobots.com/core/image_youngrobots.png" alt="logo" />
+    </div>
+
+    <div id="affils">
+        <img src="http://ultrawizardsword.net/rabbit.png" alt="rabbit">
+        <img src="http://www.youngrobots.com/media/dump/hnaut_small.jpg" alt="helmet">
+    </div>
+
+    <div id="copyright">
+        <p>copyright 2010</p>
+    </div>
+
+</div>

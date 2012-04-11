@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+{% load markup %}
+
+{% block page_title %}UltraWizardSword - {{ page.title }}{% endblock page_title %}
+
+{% block content %}
+    <div id="page_content">
+        <div id="description">
+            {{ page.content|markdown }}
+        </div>
+    </div>
+{% endblock content %}

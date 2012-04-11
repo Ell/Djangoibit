@@ -1,0 +1,145 @@
+@import "bootstrap.less";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+    background: #fff;
+}
+
+a:link { text-decoration: none; }
+a:active { text-decoration: none; }
+a:visited { text-decoration: none; color: #666; }
+a:hover { text-decoration: underline; }
+
+a img { border: none; }
+
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+h3 { font-size: 16px; }
+h4 { font-size: 12px; }
+
+p { margin: 0 0 9px 0; }
+
+
+#sidebar {
+    overflow: auto;
+    position: fixed;
+    width: 216px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    background: @white;
+}
+
+#sidebar::-webkit-scrollbar {
+    background-color:@grayLighter;  /* This is the back of the scrollbar */
+    width: 7px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {  /* This is the part of the scrollbar that you click */
+    background-color:@grayLight;
+    width: 7px;
+}
+
+#info p {
+    font-size: 12px;
+    font-family: Verdana, sans-serif;
+    margin-bottom: 5px;
+}
+
+#content {
+    height: 100%;
+    margin: 0 0 0 215px;
+    top: 0;
+}
+
+#links {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#links li {
+    margin-bottom: 5px;
+}
+
+#shows {
+    list-style-type: none;
+    margin: 0px;
+    margin-bottom: 25px;
+}
+
+#shows li {
+}
+
+#show {
+    list-style-type: none;
+    margin: 0px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+#show li {
+    margin-bottom: -5px;
+}
+
+#groups {
+    list-style-type: none;
+    margin: 0px;
+}
+
+#page {
+    list-style-type: none;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+
+#page li {
+    margin: 0;
+    margin-bottom: -5px;
+}
+
+#logo {
+    margin-top: 10px;
+}
+
+#affils {
+
+}
+
+#copyright {
+    margin-top: 10px;
+}
+
+#page_content {
+    margin-top: 5px;
+    list-style-type: none;
+}
+
+#description li {
+    list-style-type: none;
+    margin: 0px;
+    margin-top: -5px;
+}
+
+#description ul {
+    list-style-type: none;
+    margin: 0px;
+}
+
+.track-file {
+    margin-top: -14px;
+    margin-bottom: 15px;
+}
+
+.show-image {
+    margin-bottom: 15px;
+}

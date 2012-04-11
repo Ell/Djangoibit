@@ -1,0 +1,86 @@
+{% load compress %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+{% block head %}
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+
+    <title>{% block page_title %}Ultra Wizard Sword{% endblock page_title %}</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- DEBUG Crap
+    ================================================ -->
+    <link type="text/less" rel="stylesheet" href="{{ STATIC_URL }}less/site.less">
+    <script src="{{ STATIC_URL }}js/less-1.3.0.min.js"></script>
+
+    <!-- CSS
+  ================================================== -->
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}img/apple-touch-icon-114x114.png">
+
+</head>
+{% endblock head %}
+
+{% block body %}
+<body>
+
+    {% block content_container %}
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="span3">
+                {% include "sidebar.html" %}
+            </div>
+
+            <div class="span9" id="content">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+
+    {% endblock content_container %}
+
+
+
+    <!-- JS
+    ================================================== -->
+    {% block js %}
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    {% endblock js %}
+
+    {% block extra_js %}
+    {% endblock extra_js %}
+
+</body>
+{% endblock body %}
+</html>

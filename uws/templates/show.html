@@ -1,0 +1,25 @@
+{% extends "site_base.html" %}
+{% load markup %}
+
+{% block page_title %}UltraWizardSword - {{ show.title }}{% endblock page_title %}
+
+{% block content %}
+    <div id="page_content">
+        <div class="dj-name">
+            <p><b>{{ show.dj }}</b> - {{ show.name }}</p>
+        </div>
+
+        <div class="track-file">
+            <a class="track" href="{{ show.songfile }}">download this set</a>
+        </div>
+
+        <div class="show-image">
+            <img src="{{ show.image }}" />
+        </div>
+
+        <div id="description">
+            {{ show.description|markdown }}
+        </div>
+
+    </div>
+{% endblock content %}
