@@ -14,4 +14,4 @@ gunicorn
 psycopg2
 markdown
 south
-pillow
+PIL
