@@ -1,28 +1,12 @@
 {% extends "site_base.html" %}
+{% load markup %}
 
-{% block page_title %}UltraWizardSword{% endblock page_title %}
+{% block page_title %}UltraWizardSword - {{ page.title }}{% endblock page_title %}
 
 {% block content %}
-    <div id="sword">
-        <span>0==[<=======> welcome to ultrawizardsword. <=======>]==0</span>
-    </div>
-
-    <div id="main_image">
-        <img src="http://ultrawizardsword.net/files/mamxr.gif" alt="mainimg">
-    </div>
-
-    <div id="maincontent">
-        <p>stupidity and booze with integrity.</p>
-        <p>upcoming broadcasts:</p>
-        <span>
-            04/13/12 8pm - bones (roots denver) <br />
-            04/20/12 8pm - jose luis (cosmic mafia, pgh)
-            04/27/12 8pm - relative q (uws/humanaut/bleepsequence/young robots, pgh) <br />
-            05/04/12 8pm - adam oliveri (ebony & ivory, pgh) <br />
-            05/11/12 8pm - shawn rudiman (technoir audio/detroit techno militia, pgh) <br />
-            05/18/12 9pm - haziel (whoreacles united/dirty muff unit, san francisco) <br />
-            06/01/12 9pm - caley martin (sonic:torsion/ultrawizardsword, san jose) <br />
-            06/15/12 8pm - jonny 290 (aerosault, fayetteville) <br />
-        </span>
+    <div id="page_content">
+        <div id="description">
+            {{ page.content|markdown }}
+        </div>
     </div>
 {% endblock content %}

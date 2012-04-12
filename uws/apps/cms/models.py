@@ -39,6 +39,7 @@ class Page(models.Model):
     title = models.CharField("Page Title", max_length=50)
     content = models.TextField("Page Content (markdown)")
     slug = models.SlugField(editable=False)
+    frontpage = models.BooleanField(default=False, unique=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

@@ -1,13 +1,15 @@
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import DetailView
+from django.shortcuts import render
 
 from cms.models import Page, Show
 
 
-class Homepage(TemplateView):
-    template_name = "homepage.html"
+def homepage(request):
+    page = Page.objects.get(frontpage=True)
+    return render(request, "homepage.html", {"page": page})
 
 
-class Page(DetailView):
+class PageView(DetailView):
     context_object_name = 'page'
     template_name = "page.html"
     model = Page
@@ -17,7 +19,7 @@ class Page(DetailView):
         return context
 
 
-class Show(DetailView):
+class ShowView(DetailView):
     context_object_name = 'show'
     model = Show
     template_name = "show.html"
