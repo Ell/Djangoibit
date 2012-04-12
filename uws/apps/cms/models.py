@@ -6,7 +6,7 @@ class Show(models.Model):
     dj = models.CharField("DJ Name", max_length=420)
     name = models.CharField("Show Name", max_length=50)
     songfile = models.URLField("Shows MP3 Link")
-    image = models.URLField("Shows Image")
+    image = models.ImageField("Shows Image", upload_to='shows/')
     description = models.TextField("Description (markdown)")
     date = models.DateField()
     slug = models.SlugField(editable=False)
