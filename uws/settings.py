@@ -148,6 +148,7 @@ INSTALLED_APPS = [
     "compressor",
     "debug_toolbar",
     "gunicorn",
+    "south",
 
     # Pinax
 
