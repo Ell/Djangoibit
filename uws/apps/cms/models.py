@@ -1,6 +1,10 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+from cms.helpers import convert_bytes
+
+import requests
+
 
 class Show(models.Model):
     dj = models.CharField("DJ Name", max_length=420)
@@ -12,10 +16,12 @@ class Show(models.Model):
     date = models.DateField()
     slug = models.SlugField(editable=False)
     year = models.PositiveIntegerField(editable=False, blank=True)
-    songfile_size = models.PositiveIntegerField("Size in MB of songfile")
+    songfile_size = models.PositiveIntegerField("Size in MB of songfile", blank=True)
     songfile_length = models.PositiveIntegerField("Length in seconds of set")
 
     def save(self, *args, **kwargs):
+        r = requests.get(self.songfile)
+        self.songfile_size = convert_bytes(r.headers['content-length'])
         self.slug = slugify(self.name)
         self.year = self.date.year
         super(Show, self).save(*args, **kwargs)
