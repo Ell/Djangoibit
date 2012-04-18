@@ -15,7 +15,7 @@ class PageView(DetailView):
     model = Page
 
     def get_context_data(self, **kwargs):
-        context = super(Page, self).get_context_data(**kwargs)
+        context = super(PageView, self).get_context_data(**kwargs)
         return context
 
 
@@ -25,5 +25,5 @@ class ShowView(DetailView):
     template_name = "show.html"
 
     def get_context_data(self, **kwargs):
-        context = super(Show, self).get_context_data(**kwargs)
+        context = super(ShowView, self).get_context_data(**kwargs)
         return context
