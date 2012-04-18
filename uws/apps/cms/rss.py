@@ -34,7 +34,7 @@ class ItunesFeedGenerator(Rss201rev2Feed):
 class ItunesPodcastPost(object):
     def __init__(self, podcast):
         self.id = podcast.id
-        self.approval_date_time = datetime.datetime.now()
+        self.approval_date_time = podcast.date
         self.title = podcast.name
         self.summary = markdown.markdown(podcast.description)
         self.enclosure_url = podcast.songfile
