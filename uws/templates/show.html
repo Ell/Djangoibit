@@ -14,7 +14,11 @@
         </div>
 
         <div class="show-image">
-            <img src="{{ show.image.url }}" />
+            {% if show.image %}
+                <img src="{{ show.image.url }}" />
+            {% else %}
+                <img src="{{ show.imageurl }}" />
+            {% endif %}
         </div>
 
         <div id="description">
