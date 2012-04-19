@@ -71,8 +71,6 @@ class ITunesPodcastsFeed(Feed):
         """
         Returns a list of items to publish in this feed.
         """
-        stop = datetime.datetime.now()
-        start = stop - datetime.timedelta(hours=72)
         posts = Show.objects.filter()
         posts = [ItunesPodcastPost(item) for item in posts]
         return posts
