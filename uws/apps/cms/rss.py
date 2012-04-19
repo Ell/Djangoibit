@@ -1,10 +1,10 @@
 from django.contrib.syndication.views import Feed
-from django.db.models import permalink
 from cms.models import Show
 import markdown
 
 from django.utils.feedgenerator import Rss201rev2Feed
 import datetime
+from datetime import time
 
 
 class ItunesFeedGenerator(Rss201rev2Feed):
@@ -82,6 +82,9 @@ class ITunesPodcastsFeed(Feed):
         extra['itunes_image_url'] = self.itunes_image_url
         extra['itunes_explicit'] = self.itunes_explicit
         return extra
+
+    def item_pubdate(self, item):
+        return datetime.combine(item.date, time())
 
     def item_extra_kwargs(self, item):
         return {'summary': item.summary, 'duration': item.duration, 'explicit': item.explicit}
