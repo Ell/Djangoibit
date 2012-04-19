@@ -84,7 +84,7 @@ class ITunesPodcastsFeed(Feed):
         return extra
 
     def item_pubdate(self, item):
-        return datetime.combine(item.date, time())
+        return datetime.datetime.combine(item.date, time())
 
     def item_extra_kwargs(self, item):
         return {'summary': item.summary, 'duration': item.duration, 'explicit': item.explicit}
