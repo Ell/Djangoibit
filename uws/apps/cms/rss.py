@@ -89,9 +89,6 @@ class ITunesPodcastsFeed(Feed):
     def item_extra_kwargs(self, item):
         return {'summary': item.summary, 'duration': item.duration, 'explicit': item.explicit}
 
-    def item_pubdate(self, item):
-        return item.approval_date_time
-
     def item_enclosure_url(self, item):
         return item.enclosure_url
 
