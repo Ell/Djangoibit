@@ -17,7 +17,7 @@ class Show(models.Model):
     slug = models.SlugField(editable=False)
     year = models.PositiveIntegerField(editable=False, blank=True)
     songfile_size = models.PositiveIntegerField("Size in MB of songfile", blank=True)
-    songfile_length = models.TimeField("Length in seconds of set")
+    songfile_length = models.CharField("HH:MM:SS ex. 01:22:33", max_length=8)
 
     def save(self, *args, **kwargs):
         r = requests.get(self.songfile)
