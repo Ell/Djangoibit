@@ -22,7 +22,7 @@ class ItunesFeedGenerator(Rss201rev2Feed):
         handler.addQuickElement(u'itunes:name', self.feed['itunes_name'])
         handler.addQuickElement(u'itunes:email', self.feed['itunes_email'])
         handler.endElement(u"itunes:owner")
-        handler.addQuickElement(u'itunes:image', self.feed['itunes_image_url'])
+        handler.addQuickElement(u'itunes:image', attrs={"href": self.feed['itunes_image_url']})
 
     def add_item_elements(self,  handler, item):
         super(ItunesFeedGenerator, self).add_item_elements(handler, item)
