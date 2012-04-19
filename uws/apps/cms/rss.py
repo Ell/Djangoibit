@@ -17,6 +17,7 @@ class ItunesFeedGenerator(Rss201rev2Feed):
         handler.addQuickElement(u'itunes:subtitle', self.feed['subtitle'])
         handler.addQuickElement(u'itunes:author', self.feed['author_name'])
         handler.addQuickElement(u'itunes:summary', self.feed['description'])
+        handler.addQuickElement(u'itunes:category', attrs={"text": self.feed['description']})
         handler.addQuickElement(u'itunes:explicit', self.feed['itunes_explicit'])
         handler.startElement(u"itunes:owner", {})
         handler.addQuickElement(u'itunes:name', self.feed['itunes_name'])
