@@ -6,9 +6,10 @@
 
     {% if live %}
         <div id="showcontrols">
-            <p>SHOW IS LIVE</p>
-            <a id="start" href="#">play</a> | <a id="stop" href="#">stop</a>
-            <br />
+            <blink><p>SHOW IS LIVE</p></blink>
+            <div class="controls">
+                <a id="start" href="#">play</a> | <a id="stop" href="#">stop</a>
+            </div>
             <a href="http://ultrawizardsword.net:8000/uws">play in your favorite player</a>
         </div>
     {% endif %}
