@@ -80,7 +80,24 @@
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jplayer.js"></script>
     {% endblock js %}
+
+    {% if live %}
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            m4a: "http://ultrawizardsword.net:8000/uws",
+          });
+        },
+        swfPath: "{{ STATIC_URL }}flash",
+        supplied: "mp3"
+      });
+    });
+  </script>
+  {% endif %}
 
     {% block extra_js %}
     {% endblock extra_js %}
