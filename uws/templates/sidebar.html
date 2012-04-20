@@ -32,7 +32,7 @@
     <ul id="shows">
     <li></li>
     {% for show in show_list %}
-        <li>{{ show.grouper }}
+        <li class="show-year">{{ show.grouper }}
             <ul id="show">
                 {% for item in show.list %}
                 <li><a href="/s/{{ item.slug }}">{{ item.date|date:"m.d.Y" }} - {{ item.dj|lower }}</a></li>
