@@ -15,3 +15,6 @@ psycopg2
 markdown
 south
 PIL
+
+redis
+django-redis-cache
