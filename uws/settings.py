@@ -14,7 +14,7 @@ SERVE_MEDIA = False
 
 # django-compressor is turned off by default due to deployment overhead for
 # most users. See <URL> for more information
-COMPRESS = False
+COMPRESS = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
