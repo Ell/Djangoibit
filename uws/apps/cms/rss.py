@@ -56,7 +56,7 @@ class ItunesPodcastPost(object):
 
 class ITunesPodcastsFeed(Feed):
     title = "ultrawizardsword"
-    link = "ultrawizardsword.net"
+    link = ""
     author_name = 'relative_q'
     description = "archived sets from ultrawizardsword.net internet broadcasts. ultrawizardsword is a loose collective of djs and musicians brought together by electronic music. ultrawizardsword is both history and portent. ultrawizardsword is a thing to be reckoned with."
     subtitle = "ultrawizardsword dot net archives"
