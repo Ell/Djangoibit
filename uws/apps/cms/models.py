@@ -26,7 +26,7 @@ class Show(models.Model):
         self.slug = slugify(self.name)
         self.year = self.date.year
 
-        requests.get('http://ultrawizardsword.net', params={'key': settings.key})
+        requests.get('http://ultrawizardsword.net', params={'key': settings.RSS_KEY})
         super(Show, self).save(*args, **kwargs)
 
     def __unicode__(self):
